@@ -21,12 +21,14 @@ function Categories(){
     return (
         <>
             <h3>Categorias:</h3>
-            <p>Cantidad: <b>{length}</b></p>
+            <p className="cantidad">Cantidad: <b>{length}</b></p>
+            <div className='contenedorCategories'>
             {
                 category.map((item, i) => (
                         <p key={i}>{item.id}) {item.name}</p>
                     ))
             }
+            </div>
         </>
     )
 }

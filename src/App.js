@@ -7,8 +7,11 @@ import Category from './Components/Category'
 
 function App() {
   return (      
-      <div className='container'>
+    <>
+      <div className="container">
         <Index/>
+      </div>
+      <div className='container'>
         <div className='row'>
           <div className='col-md-4'>
             <User/>
@@ -21,6 +24,7 @@ function App() {
           </div>
         </div>
       </div>
+    </>
   )
 }
 

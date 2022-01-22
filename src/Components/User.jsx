@@ -21,7 +21,7 @@ function User(){
     return (
         <>
             <h3>Users:</h3>
-            <p>Cantidad: <b>{userLength}</b></p>
+            <p className="cantidad">Cantidad: <b>{userLength}</b></p>
             <div className='contenedorUsers'>
                 {
                     user.map((item, i) => (

@@ -21,7 +21,7 @@ function Products(){
     return (
         <>
             <h3>Products:</h3>
-            <p>Cantidad: <b>{productLength}</b></p>
+            <p className="cantidad">Cantidad: <b>{productLength}</b></p>
             <div className='contenedorProducts'>
                 {
                     product.map((item, i) => (
