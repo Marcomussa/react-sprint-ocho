@@ -4,7 +4,8 @@ function Products(){
 
     const URL = '/apiProducts'
 
-    const [products, setProduct] = useState([])
+    const [product, setProduct] = useState([])
+    const [productLength, setLength] = useState([])
 
     useEffect( () => {
         obtenerProducts()
@@ -13,19 +14,21 @@ function Products(){
     const obtenerProducts= async () => {
         const data = await fetch(URL)
         const products = await data.json()
-        setProduct(products)
+        setProduct(products.products)
+        setLength(products.count)
     }
 
     return (
         <>
             <h3>Products:</h3>
-            <ul>
+            <p>Cantidad: <b>{productLength}</b></p>
+            <div className='contenedorProducts'>
                 {
-                    products.map((item, i) => (
+                    product.map((item, i) => (
                         <p key={i}>{item.id}) {item.name} - {item.description} - {item.price}</p>
                     ))
                 }
-            </ul>
+            </div>
         </>
     )
 }

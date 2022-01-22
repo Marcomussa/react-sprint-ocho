@@ -5,6 +5,7 @@ function User(){
     const URL = '/apiUsers'
 
     const [user, setUser] = useState([])
+    const [userLength, setLength] = useState([])
 
     useEffect( () => {
         obtenerUsers()
@@ -13,19 +14,21 @@ function User(){
     const obtenerUsers = async () => {
         const data = await fetch(URL)
         const users = await data.json()
-        setUser(users)
+        setUser(users.users)
+        setLength(users.count)
     }
 
     return (
         <>
             <h3>Users:</h3>
-            <ul>
+            <p>Cantidad: <b>{userLength}</b></p>
+            <div className='contenedorUsers'>
                 {
                     user.map((item, i) => (
                         <p key={i}>{item.id}) {item.name} - {item.surname} - {item.email}</p>
                     ))
                 }
-            </ul>
+            </div>
         </>
     )
 }
