@@ -1,12 +1,28 @@
 .contenedorUsers,
-.contenedorCategories,
-.contenedorProducts {
+.contenedorProducts,
+.subContenedorCategories  {
   background: rgb(36, 35, 35);
   color: white;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 7px 7px 10px 0px rgb(169, 168, 168);
   border: 1px solid black;
+}
+
+.contenedorCategories {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.subContenedorCategories {
+  width: 49%;
+  margin-bottom: 10px;
+}
+
+i {
+  font-size: 30px;
 }
 
 .cantidad {

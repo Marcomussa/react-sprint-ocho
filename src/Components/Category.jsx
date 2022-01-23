@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 
-function Categories(){
+function Categories(props){
 
     const URL = '/apiCategories'
 
@@ -20,12 +20,29 @@ function Categories(){
 
     return (
         <>
-            <h3>Categorias:</h3>
-            <p className="cantidad">Cantidad: <b>{length}</b></p>
-            <div className='contenedorCategories'>
+            <div style={{
+                borderLeft: props.border,
+                borderRadius: '5px',
+                paddingLeft: '10px',
+                marginBottom: '10px',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center'
+            }}>
+                <div>
+                    <h3>Categorias:</h3>
+                    <p className="cantidad">Cantidad: <b>{length}</b></p>
+                </div>
+                <div>
+                    <i class="fas fa-mouse-pointer"></i>
+                </div>
+            </div>
+            <div className="contenedorCategories">
             {
                 category.map((item, i) => (
+                    <div className='subContenedorCategories'>
                         <p key={i}>{item.id}) {item.name}</p>
+                    </div>
                     ))
             }
             </div>

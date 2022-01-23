@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 
-function Products(){
+function Products(props){
 
     const URL = '/apiProducts'
 
@@ -20,8 +20,23 @@ function Products(){
 
     return (
         <>
-            <h3>Products:</h3>
-            <p className="cantidad">Cantidad: <b>{productLength}</b></p>
+            <div style={{
+                borderLeft: props.border,
+                borderRadius: '5px',
+                paddingLeft: '10px',
+                marginBottom: '10px',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center'
+            }}>
+                <div>
+                    <h3>Products:</h3>
+                    <p className="cantidad">Cantidad: <b>{productLength}</b></p>
+                </div>
+                <div>
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+            </div>
             <div className='contenedorProducts'>
                 {
                     product.map((item, i) => (
