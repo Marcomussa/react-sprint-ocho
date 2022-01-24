@@ -4,8 +4,7 @@ import Index from './Components/Index'
 import User from './Components/User'
 import Product from './Components/Product'
 import Category from './Components/Category'
-
-console.log(React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED)
+import ProductDetail from './Components/ProductDetail'
 
 function App() {
   return (      
@@ -31,6 +30,9 @@ function App() {
             />
           </div>
         </div>
+
+        <ProductDetail/>
+
       </div>
     </>
   )

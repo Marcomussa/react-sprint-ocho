@@ -34,15 +34,15 @@ function Products(props){
                     <p className="cantidad">Cantidad: <b>{productLength}</b></p>
                 </div>
                 <div>
-                    <i class="fas fa-laptop-code"></i>
+                    <i className="fas fa-laptop-code"></i>
                 </div>
             </div>
             <div className='contenedorProducts'>
                 {
                     product.map((item, i) => (
-                        <p key={i}>{item.id}) {item.name} - {item.description} - {item.price}</p>
+                        <p key={i}>{item.name} - {item.description} - {item.price} - #{item.id}</p>
                     ))
-                }
+                } 
             </div>
         </>
     )

@@ -34,14 +34,16 @@ function Categories(props){
                     <p className="cantidad">Cantidad: <b>{length}</b></p>
                 </div>
                 <div>
-                    <i class="fas fa-mouse-pointer"></i>
+                    <i className="fas fa-mouse-pointer"></i>
                 </div>
             </div>
             <div className="contenedorCategories">
             {
                 category.map((item, i) => (
-                    <div className='subContenedorCategories'>
-                        <p key={i}>{item.id}) {item.name}</p>
+                    <div 
+                        className='subContenedorCategories'
+                        key={i}>
+                        <p>{item.id}) {item.name}</p>
                     </div>
                     ))
             }

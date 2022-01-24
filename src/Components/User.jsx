@@ -34,13 +34,13 @@ function User(props){
                     <p className="cantidad">Cantidad: <b>{userLength}</b></p>
                 </div>
                 <div>
-                    <i class="fas fa-user"></i>
+                    <i className="fas fa-user"></i>
                 </div>
             </div>
             <div className='contenedorUsers'>
                 {
                     user.map((item, i) => (
-                        <p key={i}>{item.id}) {item.name} - {item.surname} - {item.email}</p>
+                        <p key={i}>{item.name} - {item.surname} - {item.email} - #{item.id}</p>
                     ))
                 }
             </div>
