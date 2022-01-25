@@ -2,21 +2,31 @@ import React, {useState, useEffect} from 'react'
 
 function Products(props){
 
-    const URL = '/apiProducts'
+    const URL_PRODUCTS = '/apiProducts'
+    const URL_CATEGORY = '/apiCategories'
 
     const [product, setProduct] = useState([])
     const [productLength, setLength] = useState([])
+    const [category, setCategory] = useState([])
 
     useEffect( () => {
         obtenerProducts()
+        obtenerCategory()
     }, [])
 
-    const obtenerProducts= async () => {
-        const data = await fetch(URL)
+    const obtenerProducts = async () => {
+        const data = await fetch(URL_PRODUCTS)
         const products = await data.json()
         setProduct(products.products)
         setLength(products.count)
     }
+
+    const obtenerCategory = async () => {
+        const data = await fetch(URL_CATEGORY)
+        const categories = await data.json()
+        setCategory(categories.categories)
+    } 
+
 
     return (
         <>
@@ -40,9 +50,18 @@ function Products(props){
             <div className='contenedorProducts'>
                 {
                     product.map((item, i) => (
-                        <p key={i}>{item.name} - {item.description} - {item.price} - #{item.id}</p>
+                        <p key={i}>{item.name} - {item.description} - {item.price} - #{item.id} - {
+                            category ? 
+                            category.map((category, i) => {
+                                if(category.id === 2){
+                                    console.log(category)
+                                }
+                            })
+                        : console.log(0)
+                        }</p>
                     ))
                 } 
+               
             </div>
         </>
     )

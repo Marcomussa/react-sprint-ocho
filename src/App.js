@@ -11,6 +11,7 @@ function App() {
     <>
       <div className="container">
         <Index/>
+        <hr></hr>
       </div>
       <div className='container'>
         <div className='row'>

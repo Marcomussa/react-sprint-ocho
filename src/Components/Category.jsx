@@ -18,17 +18,19 @@ function Categories(props){
         setLength(data.count)
     }
 
+    const style = {
+        borderLeft: props.border,
+        borderRadius: '5px',
+        paddingLeft: '10px',
+        marginBottom: '10px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    }
+
     return (
         <>
-            <div style={{
-                borderLeft: props.border,
-                borderRadius: '5px',
-                paddingLeft: '10px',
-                marginBottom: '10px',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center'
-            }}>
+            <div style={style}>
                 <div>
                     <h3>Categorias:</h3>
                     <p className="cantidad">Cantidad: <b>{length}</b></p>
