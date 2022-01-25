@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 
 function ProductDetail(props){
 
-    const URL = '/apiProducts'
+    const URL = '/apiLastProducts'
 
     const [product, setProduct] = useState('')
 
@@ -15,7 +15,7 @@ function ProductDetail(props){
     const obtenerProducts = async () => {
         const data = await fetch(URL)
         const products = await data.json()
-        setProduct(products.products)
+        setProduct(products)
     }
 
     return (

@@ -53,8 +53,8 @@ function Products(props){
                         <p key={i}>{item.name} - {item.description} - {item.price} - #{item.id} - {
                             category ? 
                             category.map((category, i) => {
-                                if(category.id === 2){
-                                    console.log(category)
+                                if(category.id === item.category_id){
+                                    return <span key={i}>{category.name}</span>
                                 }
                             })
                         : console.log(0)
