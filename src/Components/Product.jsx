@@ -54,6 +54,7 @@ function Products(props){
                             category ? 
                             category.map((category, i) => {
                                 if(category.id === item.category_id){
+                                    console.log(category)
                                     return <span key={i}>{category.name}</span>
                                 }
                             })

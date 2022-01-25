@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import '../App.css'
 
 function ProductDetail(props){
 
@@ -24,7 +25,7 @@ function ProductDetail(props){
             {
                 product ? 
                 arr.map((e,i) => (
-                    <div key={i}>
+                    <div key={i} className='col-md-6 contProdDetail'>
                         <p>{e.id}</p>
                         <p>{e.name}</p>
                         <p>{e.description}</p>
