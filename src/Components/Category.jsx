@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Sidebar from '../Components/Sidebar'
-import Index from '../Components/Index'
+import Title from '../Components/Title'
 
 function Categories(props){
 
@@ -41,8 +41,7 @@ function Categories(props){
 
     return (
          <>  
-         <Index/>
-         <hr />
+         <Title/>
          <div style={{display: 'flex', flexWrap: 'wrap'}}>
              <Sidebar/>
              <div className="col-md-9">

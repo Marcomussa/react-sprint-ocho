@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import Index from '../Components/Index'
+import Title from '../Components/Title'
 import Sidebar from '../Components/Sidebar'
 import ProductDetail from '../Components/ProductDetail'
 
@@ -42,8 +42,7 @@ function Products(props){
 
     return (
             <>  
-                <Index/>
-                <hr />
+                <Title/>
                 <div style={{display: 'flex', flexWrap: 'wrap'}}>
                     <Sidebar/>
                     <div className="col-md-9">
