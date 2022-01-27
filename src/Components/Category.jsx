@@ -44,7 +44,7 @@ function Categories(props){
          <Title/>
          <div style={{display: 'flex', flexWrap: 'wrap'}}>
              <Sidebar/>
-             <div className="col-md-9">
+             <div className="col-md-10">
              <div style={style}>
                 <div>
                     <h3>Categorias:</h3>

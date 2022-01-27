@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 function Sidebar(){
     return (
-        <div className='col-md-3'>
+        <div className='col-md-2'>
             <p>Sidebar</p>
             <Link to='/'>Index</Link>
             <br />

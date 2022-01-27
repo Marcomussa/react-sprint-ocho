@@ -25,7 +25,7 @@ function User(props){
             <Title/>
             <div style={{display: 'flex'}}>
             <Sidebar/>
-            <div className='col-md-9'>
+            <div className='col-md-10'>
             <div style={{
                 borderLeft: props.border,
                 borderRadius: '5px',

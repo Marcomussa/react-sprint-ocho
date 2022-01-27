@@ -40,12 +40,18 @@ function Products(props){
         alignItems: 'center'
     }
 
+    const subStyles = {
+        borderRight: '2px solid black',
+        textAlign: 'center',
+        borderLeft: '1px solid black'
+    }
+
     return (
             <>  
                 <Title/>
                 <div style={{display: 'flex', flexWrap: 'wrap'}}>
                     <Sidebar/>
-                    <div className="col-md-9">
+                    <div className="col-md-10">
                         <div style={style}>
                             <div>
                                 <h3>Products:</h3>
@@ -55,19 +61,57 @@ function Products(props){
                                 <i className="fas fa-laptop-code"></i>
                             </div>
                         </div>
-                        <div className='contenedorProducts mb-5'>
-                            <h6 className='mb-3'>Nombre - Descripcion - Precio - ID - Categoria</h6>
-                                <hr />
+                        <div className='contenedorProducts mb-1' style={{display: 'flex'}}>
+                            <div className="col-md-2" style={subStyles}>
+                                <h4>ID</h4>
+                            </div>
+                            <div className='col-md-2' style={subStyles}>
+                                <h4>Nombre</h4>
+                            </div>
+                            <div className="col-md-2" style={subStyles}>
+                                <h4>Descripcion</h4>
+                            </div>
+                            <div className="col-md-2" style={subStyles}>
+                                <h4>Precio</h4>
+                            </div>
+                            <div className="col-md-2" style={subStyles}>
+                                <h4>Categoria</h4>
+                            </div>
+                            <div className="col-md-2" style={subStyles}>
+                                <h4>Creacion:</h4>
+                            </div>
+                        </div> 
+                            <div className='contenedorProducts mb-5'>
                                 {
                                     product.map((item, i) => (
-                                        <p key={i}>{item.name} - {item.description} - ${item.price} - #{item.id} - {
-                                        category ? 
-                                        category.map((category, i) => {
-                                            if(category.id === item.category_id){
-                                                return <span key={i}>{category.name}</span>
-                                            }})
-                                        : console.log(0)
-                                    } </p> ))
+                                        <div key={i} style={{display: 'flex'}}>
+                                            <div className="col-md-2" style={subStyles}>
+                                                <p>{item.id}</p>
+                                            </div>
+                                            <div className="col-md-2" style={subStyles}>
+                                                <p>{item.name}</p>
+                                            </div>
+                                            <div className="col-md-2" style={subStyles}>
+                                                <p>{item.description}</p>
+                                            </div>
+                                            <div className="col-md-2" style={subStyles}>
+                                                <p>${item.price}</p>
+                                            </div>
+                                            <div className="col-md-2" style={subStyles}>
+                                            <p>{
+                                                category ? 
+                                                category.map((category, i) => {
+                                                    if(category.id === item.category_id){
+                                                        return <span key={i}>{category.name}</span>
+                                                    }})
+                                                : console.log(0)
+                                            } </p> 
+                                            </div>
+                                            <div className="col-md-2" style={subStyles}>
+                                                <p>{item.createdAt.slice(0,10)}</p>
+                                            </div>
+                                        </div>    
+                                    ))
                                 }  
                         </div>
                         <div>
