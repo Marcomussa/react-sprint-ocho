@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react'
+import Index from '../Components/Index'
+import Sidebar from '../Components/Sidebar'
 
 function User(props){
 
-    const URL = '/apiUsers'
+    const URL = '/api/users'
 
     const [user, setUser] = useState([])
     const [userLength, setLength] = useState([])
@@ -19,7 +21,12 @@ function User(props){
     }
 
     return (
-        <>
+        <>  
+            <Index/>
+            <hr />
+            <div style={{display: 'flex'}}>
+            <Sidebar/>
+            <div className='col-md-9'>
             <div style={{
                 borderLeft: props.border,
                 borderRadius: '5px',
@@ -38,11 +45,15 @@ function User(props){
                 </div>
             </div>
             <div className='contenedorUsers'>
+                <h4 className='mb-3'>Nombre - Apellido - Email - ID</h4>
+                <hr />
                 {
                     user.map((item, i) => (
                         <p key={i}>{item.name} - {item.surname} - {item.email} - #{item.id}</p>
                     ))
                 }
+            </div>
+            </div>
             </div>
         </>
     )

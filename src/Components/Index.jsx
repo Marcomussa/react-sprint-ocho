@@ -2,7 +2,7 @@ import React from 'react'
 
 function Index(){
     return (
-        <div className="row" style={
+        <div style={
             {
                 marginBottom: '10px'
             }

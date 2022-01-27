@@ -3,7 +3,7 @@ import '../App.css'
 
 function ProductDetail(props){
 
-    const URL = '/apiLastProducts'
+    const URL = '/api/lastProduct'
 
     const [product, setProduct] = useState('')
 
@@ -25,12 +25,11 @@ function ProductDetail(props){
             {
                 product ? 
                 arr.map((e,i) => (
-                    <div key={i} className='col-md-6 contProdDetail'>
-                        <p>{e.id}</p>
-                        <p>{e.name}</p>
-                        <p>{e.description}</p>
-                        <p>{e.avatar}</p>
-                        <p>{e.price}</p>
+                    <div key={i} className='col-md-12 mb-5 contProdDetail'>
+                        <p>ID: <b>{e.id}</b></p>
+                        <p>Nombre: <b>{e.name}</b></p>
+                        <p>Descripcion: <b>{e.description}</b></p>
+                        <p>Precio: <b>{e.price}</b></p>
                     </div>
                 ))
                 : <span>Cargando...</span>

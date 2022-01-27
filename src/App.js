@@ -4,38 +4,18 @@ import Index from './Components/Index'
 import User from './Components/User'
 import Product from './Components/Product'
 import Category from './Components/Category'
-import ProductDetail from './Components/ProductDetail'
+import {Route, Routes} from 'react-router-dom'
 
 function App() {
   return (      
-    <>
-      <div className="container">
-        <Index/>
-        <hr></hr>
-      </div>
-      <div className='container'>
-        <div className='row'>
-          <div className='col-md-4'>
-            <User
-              border='5px solid red'
-            />
-          </div>
-          <div className='col-md-4'>
-            <Product
-              border='5px solid blue'
-            />
-          </div>
-          <div className='col-md-4'>
-            <Category
-              border='5px solid green'
-            />
-          </div>
-        </div>
-
-        <ProductDetail/>
-
-      </div>
-    </>
+    <div className='container'>
+      <Routes>
+        <Route path='/' element={<Index/>}/>
+        <Route path='/users' element={<User  border='5px solid red'/>}/>
+        <Route path='/products' element={<Product border='5px solid blue'/>}/>
+        <Route path='/categories' element={<Category border='5px solid green'/>}/>
+      </Routes>
+    </div>
   )
 }
 
