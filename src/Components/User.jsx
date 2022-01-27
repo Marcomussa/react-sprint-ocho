@@ -43,12 +43,38 @@ function User(props){
                     <i className="fas fa-user"></i>
                 </div>
             </div>
-            <div className='contenedorUsers'>
-                <h4 className='mb-3'>Nombre - Apellido - Email - ID</h4>
+            <div className='contenedorUsers mb-2' style={{display: 'flex'}}>
+                <div className="col-md-3">
+                    <h4>ID</h4>
+                </div>
+                <div className="col-md-3">
+                    <h4>Nombre</h4>
+                </div>
+                <div className="col-md-3">
+                    <h4>Apellido</h4>
+                </div>
+                <div className="col-md-3">
+                    <h4>Email</h4>
+                </div>
                 <hr />
-                {
+            </div>
+            <div className='contenedorUsers'>
+            {
                     user.map((item, i) => (
-                        <p key={i}>{item.name} - {item.surname} - {item.email} - #{item.id}</p>
+                        <div key={i} style={{display: 'flex'}}>
+                            <div className="col-md-3">
+                                <p>#{item.id}</p>
+                            </div>
+                            <div className="col-md-3">
+                                <p>{item.name}</p>
+                            </div>
+                            <div className="col-md-3">
+                                <p>{item.surname}</p>
+                            </div>
+                            <div className="col-md-3">
+                                <p>{item.email}</p>
+                            </div>
+                        </div>
                     ))
                 }
             </div>
