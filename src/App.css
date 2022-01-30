@@ -31,4 +31,16 @@ i {
   display: inline-block
 }
 
+.priceCards {
+  text-decoration: line-through;
+}
 
+.contCardProducts {
+  width: 23%;
+  margin-right: 10px;
+  box-shadow: 7px 7px 10px 0px rgb(169, 168, 168);
+  background: rgb(36, 35, 35);
+  color: white;
+  border-radius: 10px;
+  padding: 15px;
+}

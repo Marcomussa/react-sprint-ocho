@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import Title from '../Components/Title'
 import Sidebar from '../Components/Sidebar'
-import ProductDetail from '../Components/ProductDetail'
+import LastProduct from './LastProduct'
+import {Link} from 'react-router-dom'
 
 function Products(props){
 
@@ -28,7 +29,7 @@ function Products(props){
         const data = await fetch(URL_CATEGORY)
         const categories = await data.json()
         setCategory(categories.categories)
-    } 
+    }     
 
     const style = {
         borderLeft: props.border,
@@ -61,6 +62,15 @@ function Products(props){
                                 <i className="fas fa-laptop-code"></i>
                             </div>
                         </div>
+                        <div className='mb-3'>
+                            <Link to='/products' className='mr-2'>List</Link>
+                            <Link to='/products/cards'>Cards</Link>
+                        </div>
+                        <hr />
+                        <div>
+                            <LastProduct/>
+                        </div>
+                        <h3>List</h3>
                         <div className='contenedorProducts mb-1' style={{display: 'flex'}}>
                             <div className="col-md-2" style={subStyles}>
                                 <h4>ID</h4>
@@ -72,7 +82,7 @@ function Products(props){
                                 <h4>Descripcion</h4>
                             </div>
                             <div className="col-md-2" style={subStyles}>
-                                <h4>Precio</h4>
+                                <h4>Precio</h4> <span>(final)</span>
                             </div>
                             <div className="col-md-2" style={subStyles}>
                                 <h4>Categoria</h4>
@@ -81,7 +91,9 @@ function Products(props){
                                 <h4>Creacion:</h4>
                             </div>
                         </div> 
-                            <div className='contenedorProducts mb-5'>
+                            {
+                                product ?
+                                <div className='contenedorProducts mb-5'>
                                 {
                                     product.map((item, i) => (
                                         <div key={i} style={{display: 'flex'}}>
@@ -95,7 +107,7 @@ function Products(props){
                                                 <p>{item.description}</p>
                                             </div>
                                             <div className="col-md-2" style={subStyles}>
-                                                <p>${item.price}</p>
+                                                <p>${item.price - (item.price * 0.01 * item.discount)}</p>
                                             </div>
                                             <div className="col-md-2" style={subStyles}>
                                             <p>{
@@ -113,10 +125,9 @@ function Products(props){
                                         </div>    
                                     ))
                                 }  
-                        </div>
-                        <div>
-                            <ProductDetail/>
-                        </div>
+                            </div>
+                                : <span>Cargando...</span>
+                            }
                     </div>
                 </div>
             </>

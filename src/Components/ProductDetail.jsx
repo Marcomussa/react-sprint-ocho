@@ -1,69 +1,71 @@
-import React, {useState, useEffect} from 'react'
-import '../App.css'
+import React, { useState, useEffect } from 'react'
+import {useParams, Link} from 'react-router-dom'
+import Title from '../Components/Title'
+import Sidebar from '../Components/Sidebar'
 
 function ProductDetail(props){
+    const URL = '/api/products'
+    const { id } = useParams()
 
-    const URL = '/api/lastProduct'
+    const [product, setProduct] = useState([])
+    const [productLength, setLength] = useState([])
 
-    const [product, setProduct] = useState('')
-
-    let arr = [product[0]]
-
-    useEffect( () => {
-        obtenerProducts()
+    useEffect(() => {
+        obtenerProduct()
     }, [])
 
-    const obtenerProducts = async () => {
+    const obtenerProduct = async () => {
         const data = await fetch(URL)
         const products = await data.json()
-        setProduct(products)
+        setProduct(products.products)
+        setLength(products.count)
+    }
+
+    const style = {
+        borderLeft: props.border,
+        borderRadius: '5px',
+        paddingLeft: '10px',
+        marginBottom: '10px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
     }
 
     return (
         <>
-            <h3>Ultimo Producto Agregado</h3>
-            {
-                product ? 
-                arr.map((e,i) => (
-                    <div key={i} className='col-md-12 mb-5 contProdDetail'>
-                        <p>ID: <b>{e.id}</b></p>
-                        <p>Nombre: <b>{e.name}</b></p>
-                        <p>Descripcion: <b>{e.description}</b></p>
-                        <p>Precio: <b>{e.price}</b></p>
+            <Title/>
+                <div style={{display: 'flex', flexWrap: 'wrap'}}>
+                <Sidebar/>
+                <div className="col-md-10">
+                <div style={style}>
+                            <div>
+                                <h3>Products:</h3>
+                                <p className="cantidad">Cantidad: <b>{productLength}</b></p>
+                            </div>
+                            <div>
+                                <i className="fas fa-laptop-code"></i>
+                            </div>
+                </div>
+                    <div className='mb-3'>
+                        <Link to='/products' className='mr-2'>List</Link>
+                        <Link to='/products/cards'>Cards</Link>
                     </div>
-                ))
-                : <span>Cargando...</span>
-            }
-           
+                <hr />
+                {
+                    product.map( (e,i) => {
+                        if(e.id === Number(id)){
+                            return <div key={i}>
+                                <h3>Detail: #{e.id}</h3>
+                                <h5>{e.name}</h5>
+                                <h5>{e.description}</h5>
+                            </div>
+                        } 
+                    })
+                }
+                </div>
+                </div>
         </>
     )
 }
-
-// class ProductDetail extends Component {
-//     constructor(props){
-//         super(props)
-//         this.state = {
-//             data: []
-//         }
-//     }
-
-//     componentDidMount(){
-//         fetch('/apiProducts')
-//         .then(res => res.json())
-//         .then(par => {
-//             this.setState({data: par})
-//         })
-//     }
-
-//     render(){
-//         return (
-//             <>
-//                 {
-//                     this.state.data.products.map((e) => console.log(e))
-//                 }
-//             </>
-//         )
-//     }
-// }
 
 export default ProductDetail
