@@ -7,6 +7,7 @@ import Category from './Components/Category'
 import ProductCard from './Components/ProductCard'
 import {Route, Routes} from 'react-router-dom'
 import ProductDetail from './Components/ProductDetail'
+import CategoryDetail from './Components/CategoryDetail'
 
 function App() {
   return (      
@@ -18,6 +19,7 @@ function App() {
         <Route path='/products/cards' element={<ProductCard border='5px solid blue'/>}></Route>
         <Route path='/products/:id' element={<ProductDetail border='5px solid blue'/>}></Route>
         <Route path='/categories' element={<Category border='5px solid green'/>}/>
+        <Route path='/categories/:id' element={<CategoryDetail border='5px solid green'/>}/>
       </Routes>
     </div>
   )

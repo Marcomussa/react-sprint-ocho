@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Sidebar from '../Components/Sidebar'
 import Title from '../Components/Title'
+import {Link} from 'react-router-dom'
 
 function Categories(props){
 
@@ -64,12 +65,15 @@ function Categories(props){
                         {
                             cantProdsXCat.map((e,i) => {
                                 if(e.id === item.id){
-                                    return <span>Cantidad: <b>{e.count}</b></span>
+                                    return <div key={i}>
+                                        <p>Cantidad: <b>{e.count}</b></p>
+                                        <Link to={`/categories/${item.id}`}>Productos</Link>
+                                    </div>
                                 }
                             })
                         }
                     </div>
-                    ))
+                ))
             }
             </div>
             </div>
