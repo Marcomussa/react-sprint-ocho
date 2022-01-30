@@ -9,7 +9,7 @@ function Index(){
          <div style={{display: 'flex', flexWrap: 'wrap'}}>
             <Sidebar/>
             <div className="col-md-9">
-               
+        
             </div>
         </div>
        </>

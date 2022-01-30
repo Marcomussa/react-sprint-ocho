@@ -46,14 +46,15 @@ function CategoryDetail(props){
             <div className="col-md-10">
                 <div style={style}>
                     <div>
-                            {
-                                cantProdsXCat.map( (e,i) => {
-                                    if(e.id === Number(id)){
-                                        return <div>
-                                            <h3>{e.name}</h3>
-                                            <p className="cantidad">Cantidad: {e.count}<b></b></p>
-                                        </div>
-                                    }
+                        {
+                            cantProdsXCat.map( (e,i) => {
+                                if(e.id === Number(id)){
+                                    return <div>
+                                        <h3>{e.name}</h3>
+                                        <p className="cantidad">Cantidad: {e.count}<b></b></p>
+                                 </div>
+                                }
+                                return ''
                                 })
                             }    
                      
