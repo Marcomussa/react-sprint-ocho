@@ -55,6 +55,7 @@ function Categories(props){
                     <i className="fas fa-mouse-pointer"></i>
                 </div>
             </div>
+            <hr />
             <div className="contenedorCategories">
             {
                 category.map((item, i) => (

@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Title from '../Components/Title'
 import Sidebar from '../Components/Sidebar'
-import LastProduct from './LastProduct'
 import {Link} from 'react-router-dom'
 
 function Products(props){
@@ -12,6 +11,8 @@ function Products(props){
     const [product, setProduct] = useState([])
     const [productLength, setLength] = useState([])
     const [category, setCategory] = useState([])
+    const [tablaProducts, setTablaProducts] = useState([])
+    const [busqueda, setBusqueda] = useState('')
 
     useEffect( () => {
         obtenerProducts()
@@ -23,6 +24,7 @@ function Products(props){
         const products = await data.json()
         setProduct(products.products)
         setLength(products.count)
+        setTablaProducts(products.products)
     }
 
     const obtenerCategory = async () => {
@@ -30,6 +32,20 @@ function Products(props){
         const categories = await data.json()
         setCategory(categories.categories)
     }     
+
+    const handleChange = (e) => {
+        setBusqueda(e.target.value)
+        filtar(e.target.value)
+    }   
+
+    const filtar = (terminoBusqueda) => {
+        var resultadosBusqueda = tablaProducts.filter((elemento) => {
+            if(elemento.name.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())){
+              return elemento;
+            }
+          });
+        setProduct(resultadosBusqueda);
+    }
 
     const style = {
         borderLeft: props.border,
@@ -67,10 +83,14 @@ function Products(props){
                             <Link to='/products/cards'>Cards</Link>
                         </div>
                         <hr />
-                        <div>
-                            <LastProduct/>
+                        <div className='mb-4 mt-4'>
+                        <input 
+                            type="text" 
+                            className='form form-control' 
+                            placeholder='Buscar Producto (Nombre)'
+                            value={busqueda}
+                            onChange={handleChange}/>
                         </div>
-                        <h3>List</h3>
                         <div className='contenedorProducts mb-1' style={{display: 'flex'}}>
                             <div className="col-md-2" style={subStyles}>
                                 <h4>ID</h4>
