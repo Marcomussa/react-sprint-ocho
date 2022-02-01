@@ -63,14 +63,18 @@ function CategoryDetail(props){
                         <i className="fas fa-mouse-pointer"></i>
                     </div>
                 </div>
-                <div>
+                <hr />
+                <div style={{display: 'flex', flexWrap: 'wrap'}}>
                     {
                         product.map( (e,i) => {
                             if(e.category_id === Number(id)){
-                                return <div key={i}>
-                                    <p>{e.id}</p>
-                                    <p>{e.name}</p>
-                                    <hr />
+                                return <div key={i} style={{width: '32%', marginRight: '20px', padding: '10px'}} className='card shadow'>
+                                    <img src={e.image_url} alt="" className='card-img-top'/>
+                                    <div className="card-body">
+                                        <h5 className="card-title">{e.name}</h5>
+                                        <p className="card-text">{e.description}</p>
+                                        <Link to={`/products/${e.id}`} className='btn btn-success'>Detalle</Link>
+                                    </div>
                                 </div>
                             }
                         })

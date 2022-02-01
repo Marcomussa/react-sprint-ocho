@@ -54,11 +54,20 @@ function ProductDetail(props){
                 {
                     product.map( (e,i) => {
                         if(e.id === Number(id)){
-                            return <div key={i}>
-                                <h3>Detail: #{e.id}</h3>
-                                <h5>{e.name}</h5>
-                                <h5>{e.description}</h5>
+                            return <div key={i} className='col-md-12 mb-4 contProdDetail'>
+                            <div className="col-md-6">
+                                <img src={e.image_url} alt="" style={{width: '100%'}}/>
                             </div>
+                            <div className="col-md-6" style={{marginLeft: '20px'}}>
+                                <p>ID: <b>#{e.id}</b></p>
+                                <p>Nombre: <b>{e.name}</b></p>
+                                <p>Descripcion: <b>{e.description}</b></p>
+                                <p>Creacion: <b>{e.createdAt.slice(0,10)}</b></p>
+                                <p>Precio: <b>${e.price}</b></p>
+                                <p>Descuento: <b>{e.discount}%</b></p>
+                                <p>Precio Final: <b>${e.price - (e.price * 0.01 * e.discount)}</b></p>
+                            </div>
+                        </div>
                         } 
                     })
                 }

@@ -45,9 +45,10 @@ function Index(){
                         marginBottom: '10px',
                         display: 'flex',
                         justifyContent: 'space-between',
-                        alignItems: 'center'
+                        alignItems: 'center',
+                        width: '33%'
                     }
-                } className='col-md-4'>
+                }>
                     <div>
                         <h3>Products</h3>
                         <p className="cantidad">Cantidad: <b>{productLength}</b></p>
@@ -62,9 +63,10 @@ function Index(){
                         marginBottom: '10px',
                         display: 'flex',
                         justifyContent: 'space-between',
-                        alignItems: 'center'
+                        alignItems: 'center',
+                        width: '33%'
                     }
-                }  className='col-md-4'>
+                }>
                     <div>
                         <h3>Users</h3>
                         <p className="cantidad">Cantidad: <b>{usersLength}</b></p>
@@ -79,16 +81,17 @@ function Index(){
                         marginBottom: '10px',
                         display: 'flex',
                         justifyContent: 'space-between',
-                        alignItems: 'center'
+                        alignItems: 'center',
+                        width: '33%'
                     }
-                }  className='col-md-4'>
+                }>
                     <div>
                         <h3>Categories</h3>
                         <p className="cantidad">Cantidad: <b>{categoryLength}</b></p>
                     </div>
                 </div>
                 </div>
-
+                <hr />
                 <LastProduct/>
             </div>
         </div>

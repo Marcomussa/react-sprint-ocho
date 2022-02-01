@@ -68,7 +68,7 @@ function Categories(props){
                                 if(e.id === item.id){
                                     return <div key={i}>
                                         <p>Cantidad: <b>{e.count}</b></p>
-                                        <Link to={`/categories/${item.id}`}>Productos</Link>
+                                        <Link to={`/categories/${item.id}`} className='btn btn-success'>Listado</Link>
                                     </div>
                                 }
                             })

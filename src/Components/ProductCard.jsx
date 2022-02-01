@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import Sidebar from '../Components/Sidebar'
 import Title from '../Components/Title'
-import Products from './Product'
 
 function ProductCard(props){
 
@@ -58,12 +57,13 @@ function ProductCard(props){
                         <div 
                             className='mb-4 contCardProducts'
                             key={i}>
+                            <img src={e.image_url} alt="" />
                             <p>#{e.id}</p>
                             <p>{e.name}</p>
                             <p>{e.descripcion}</p>
                             <p className='priceCards'>${e.price}</p>
                             <p>${e.price - (e.price * 0.01 * e.discount)}</p>
-                            <Link to={`/products/${e.id}`}>Detalle</Link>
+                            <Link to={`/products/${e.id}`} className='btn btn-primary'>Detalle</Link>
                         </div>
                     ))}
                     </div>
