@@ -15,8 +15,13 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   border: 1px solid black;
 }
 
+.contProdDetail img {
+  height: 100%;
+}
+
 .contProdDetail {
   display: flex;
+  height: 310px;
 }
 
 .contenedorCategories {
@@ -45,10 +50,8 @@ i {
 }
 
 .contCardProducts {
-  width: 32%;
+  width: 23%;
   margin-right: 10px;
-  box-shadow: 7px 7px 10px 0px rgb(169, 168, 168);
-  background: rgb(36, 35, 35);
   color: white;
   border-radius: 10px;
   padding: 15px;

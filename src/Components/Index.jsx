@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import Sidebar from '../Components/Sidebar'
 import Title from '../Components/Title'
 import LastProduct from './LastProduct'
+import Discount from './Discount'
 
 function Index(){
     const URL_PRODUCTS = '/api/products'
@@ -102,6 +103,8 @@ function Index(){
                 </div>
                 <hr />
                 <LastProduct/>
+                <hr />
+                <Discount/>
             </div>
         </div>
        </>

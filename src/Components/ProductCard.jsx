@@ -36,7 +36,7 @@ function ProductCard(props){
            <Title/>
             <div style={{display: 'flex', flexWrap: 'wrap'}}>
                 <Sidebar/>
-                <div className="col-md-10" style={{ background: 'rgba(255,255,255,0.6)', padding: '10px'}}>
+                <div className="col-md-10" style={{padding: '10px'}}>
                     <div style={style}>
                         <div>
                             <h3>Products:</h3>
@@ -54,17 +54,13 @@ function ProductCard(props){
                     <h3 className='mb-3'>Cards:</h3>
                     <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'}}>
                     {product.map( (e,i) => (
-                        <div 
-                            className='mb-4 contCardProducts'
-                            key={i}>
-                            <img src={e.image_url} alt="" />
-                            <p>#{e.id}</p>
-                            <p>{e.name}</p>
-                            <p>{e.descripcion}</p>
-                            <p className='priceCards'>${e.price}</p>
-                            <p>${e.price - (e.price * 0.01 * e.discount)}</p>
-                            <Link to={`/products/${e.id}`} className='btn btn-primary'>Detalle</Link>
+                        <div key={i} style={{width: '23%', marginRight: '20px', padding: '10px', marginBottom: '20px'}} className='card shadow'>
+                        <img src={e.image_url} alt="" className='card-img-top' style={{width: '100%', height: '50%'}}/>
+                        <div className="card-body">
+                            <h5 className="card-title">{e.name}</h5>
+                            <Link to={`/products/${e.id}`} className='btn btn-success'>Detalle</Link>
                         </div>
+                    </div>
                     ))}
                     </div>
                 </div>
