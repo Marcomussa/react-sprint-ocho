@@ -35,7 +35,7 @@ function Index(){
         <Title/>
          <div style={{display: 'flex', flexWrap: 'wrap'}}>
             <Sidebar/>
-            <div className="col-md-10">
+            <div className="col-md-10" style={{ background: 'rgba(255,255,255,0.6)', padding: '10px'}}>
                 <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', marginBottom: '20px'}}>
                 <div style={
                     {

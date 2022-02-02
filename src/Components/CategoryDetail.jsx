@@ -43,7 +43,7 @@ function CategoryDetail(props){
          <Title/>
          <div style={{display: 'flex', flexWrap: 'wrap'}}>
             <Sidebar/>
-            <div className="col-md-10">
+            <div className="col-md-10" style={{ background: 'rgba(255,255,255,0.6)', padding: '10px'}}>
                 <div style={style}>
                     <div>
                         {
@@ -65,6 +65,18 @@ function CategoryDetail(props){
                 </div>
                 <hr />
                 <div style={{display: 'flex', flexWrap: 'wrap'}}>
+                    {
+                        cantProdsXCat.map(e => {
+                            if(e.id === Number(id)){
+                                if(e.count === 0){
+                                    return <>
+                                        <h3 style={{marginRight: '10px'}}>Categoria Vacia</h3>
+                                        <i className="far fa-frown"></i>
+                                    </>
+                                }   
+                            }
+                        })
+                    }
                     {
                         product.map( (e,i) => {
                             if(e.category_id === Number(id)){

@@ -45,7 +45,7 @@ function Categories(props){
          <Title/>
          <div style={{display: 'flex', flexWrap: 'wrap'}}>
              <Sidebar/>
-             <div className="col-md-10">
+             <div className="col-md-10" style={{ background: 'rgba(255,255,255,0.6)', padding: '10px'}}>
              <div style={style}>
                 <div>
                     <h3>Categorias:</h3>
@@ -68,7 +68,7 @@ function Categories(props){
                                 if(e.id === item.id){
                                     return <div key={i}>
                                         <p>Cantidad: <b>{e.count}</b></p>
-                                        <Link to={`/categories/${item.id}`} className='btn btn-success'>Listado</Link>
+                                        <Link to={`/categories/${item.id}`} className='btn btn-success'>Productos</Link>
                                     </div>
                                 }
                             })

@@ -36,7 +36,7 @@ function ProductDetail(props){
             <Title/>
                 <div style={{display: 'flex', flexWrap: 'wrap'}}>
                 <Sidebar/>
-                <div className="col-md-10">
+                <div className="col-md-10" style={{ background: 'rgba(255,255,255,0.6)', padding: '10px'}}>
                 <div style={style}>
                             <div>
                                 <h3>Products:</h3>

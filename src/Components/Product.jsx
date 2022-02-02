@@ -39,12 +39,12 @@ function Products(props){
     }   
 
     const filtar = (terminoBusqueda) => {
-        var resultadosBusqueda = tablaProducts.filter((elemento) => {
+        let resultadosBusqueda = tablaProducts.filter((elemento) => {
             if(elemento.name.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())){
-              return elemento;
+              return elemento
             }
           });
-        setProduct(resultadosBusqueda);
+        setProduct(resultadosBusqueda)
     }
 
     const style = {
@@ -68,7 +68,7 @@ function Products(props){
                 <Title/>
                 <div style={{display: 'flex', flexWrap: 'wrap'}}>
                     <Sidebar/>
-                    <div className="col-md-10">
+                    <div className="col-md-10" style={{background: 'rgba(255,255,255,0.6)', padding: '10px'}}>
                         <div style={style}>
                             <div>
                                 <h3>Products:</h3>

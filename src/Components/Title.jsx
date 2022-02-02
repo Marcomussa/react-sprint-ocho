@@ -3,7 +3,9 @@ import React from 'react'
 function Title(){
     return (
        <>
-        <h1>Dashboard Geekware</h1>
+        <h1 style={{
+            padding: '10px 0px'
+        }}> Dashboard Geekware </h1>
         <hr />
        </>
     )

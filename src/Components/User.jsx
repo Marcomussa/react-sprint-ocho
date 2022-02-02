@@ -42,7 +42,9 @@ function User(props){
             <Title/>
             <div style={{display: 'flex'}}>
             <Sidebar/>
-            <div className='col-md-10'>
+            <div className='col-md-10'style={{
+                background: 'rgba(255,255,255,0.6)', padding: '10px'
+            }}>
                 <div style={{
                     borderLeft: props.border,
                     borderRadius: '5px',
@@ -70,7 +72,7 @@ function User(props){
                         onChange={handleChange}/>
                 </div>
                 <div className='contenedorUsers mb-2' style={{display: 'flex'}}>
-                    <div className="col-md-3">
+                    <div className="col-md-2">
                         <h4>ID</h4>
                     </div>
                     <div className="col-md-3">
@@ -82,23 +84,29 @@ function User(props){
                     <div className="col-md-3">
                         <h4>Email</h4>
                     </div>
+                    <div className="col-md-2">
+                        <h4>Gender</h4>
+                    </div>
                     <hr />
                 </div>
                 <div className='contenedorUsers'>
                 {
                     user.map((item, i) => (
-                        <div key={i} style={{display: 'flex'}}>
-                            <div className="col-md-3">
-                                <p>#{item.id}</p>
+                        <div key={i} style={{display: 'flex', marginBottom: '25px'}}>
+                            <div className="col-md-2">
+                                <h6>#{item.id}</h6>
                             </div>
                             <div className="col-md-3">
-                                <p>{item.name}</p>
+                                <h6>{item.name}</h6>
                             </div>
                             <div className="col-md-3">
-                                <p>{item.surname}</p>
+                                <h6>{item.surname}</h6>
                             </div>
                             <div className="col-md-3">
-                                <p>{item.email}</p>
+                                <h6>{item.email}</h6>
+                            </div>
+                            <div className="col-md-2">
+                                <h6>{item.gender}</h6>
                             </div>
                         </div>
                     ))
