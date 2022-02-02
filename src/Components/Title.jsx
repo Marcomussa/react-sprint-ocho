@@ -5,7 +5,7 @@ function Title(){
        <>
         <h1 style={{
             padding: '10px 0px'
-        }}> Dashboard Geekware </h1>
+        }}> * Dashboard Geekware * </h1>
         <hr />
        </>
     )
