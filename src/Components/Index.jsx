@@ -46,12 +46,15 @@ function Index(){
                         display: 'flex',
                         justifyContent: 'space-between',
                         alignItems: 'center',
-                        width: '33%'
+                        width: '31%'
                     }
                 }>
                     <div>
                         <h3>Products</h3>
                         <p className="cantidad">Cantidad: <b>{productLength}</b></p>
+                    </div>
+                    <div>
+                        <i className="fas fa-laptop-code"></i>
                     </div>
                 </div>
 
@@ -64,12 +67,15 @@ function Index(){
                         display: 'flex',
                         justifyContent: 'space-between',
                         alignItems: 'center',
-                        width: '33%'
+                        width: '31%'
                     }
                 }>
                     <div>
                         <h3>Users</h3>
                         <p className="cantidad">Cantidad: <b>{usersLength}</b></p>
+                    </div>
+                    <div>
+                        <i className="fas fa-user"></i>
                     </div>
                 </div>
 
@@ -82,12 +88,15 @@ function Index(){
                         display: 'flex',
                         justifyContent: 'space-between',
                         alignItems: 'center',
-                        width: '33%'
+                        width: '31%'
                     }
                 }>
                     <div>
                         <h3>Categories</h3>
                         <p className="cantidad">Cantidad: <b>{categoryLength}</b></p>
+                    </div>
+                    <div>
+                        <i className="fas fa-mouse-pointer"></i>
                     </div>
                 </div>
                 </div>
