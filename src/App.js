@@ -14,12 +14,12 @@ function App() {
     <div className='container'>
       <Routes>
         <Route path='/' element={<Index/>}/>
-        <Route path='/users' element={<User  border='5px solid red'/>}/>
-        <Route path='/products' element={<Product border='5px solid blue'/>}/>
-        <Route path='/products/cards' element={<ProductCard border='5px solid blue'/>}></Route>
-        <Route path='/products/:id' element={<ProductDetail border='5px solid blue'/>}></Route>
-        <Route path='/categories' element={<Category border='5px solid green'/>}/>
-        <Route path='/categories/:id' element={<CategoryDetail border='5px solid green'/>}/>
+        <Route path='/users' element={<User  border='5px solid #dc3545'/>}/>
+        <Route path='/products' element={<Product border='5px solid #007bff'/>}/>
+        <Route path='/products/cards' element={<ProductCard border='5px solid #007bff'/>}></Route>
+        <Route path='/products/:id' element={<ProductDetail border='5px solid #007bff'/>}></Route>
+        <Route path='/categories' element={<Category border='5px solid #28a745'/>}/>
+        <Route path='/categories/:id' element={<CategoryDetail border='5px solid #28a745'/>}/>
       </Routes>
     </div>
   )

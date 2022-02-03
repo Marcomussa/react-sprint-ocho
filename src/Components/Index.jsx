@@ -40,7 +40,7 @@ function Index(){
                 <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', marginBottom: '20px'}}>
                 <div style={
                     {
-                        borderLeft: '5px solid blue',
+                        borderLeft: '5px solid #007bff',
                         borderRadius: '5px',
                         paddingLeft: '10px',
                         marginBottom: '10px',
@@ -61,7 +61,7 @@ function Index(){
 
                 <div style={
                     {
-                        borderLeft: '5px solid red',
+                        borderLeft: '5px solid #dc3545',
                         borderRadius: '5px',
                         paddingLeft: '10px',
                         marginBottom: '10px',
@@ -82,7 +82,7 @@ function Index(){
 
                 <div style={
                     {
-                        borderLeft: '5px solid green',
+                        borderLeft: '5px solid #28a745',
                         borderRadius: '5px',
                         paddingLeft: '10px',
                         marginBottom: '10px',

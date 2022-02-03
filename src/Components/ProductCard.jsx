@@ -47,8 +47,8 @@ function ProductCard(props){
                         </div>
                     </div>
                     <div className='mb-2'>
-                        <Link to='/products' className='mr-2'>List</Link>
-                        <Link to='/products/cards'>Cards</Link>
+                        <Link to='/products' className='mr-2 mt-2 btn btn-primary'>List</Link>
+                        <Link to='/products/cards' className='mt-2 btn btn-primary'>Cards</Link>
                     </div>
                     <hr />
                     <h3 className='mb-3'>Cards:</h3>
