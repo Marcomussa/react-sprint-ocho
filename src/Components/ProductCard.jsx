@@ -54,9 +54,9 @@ function ProductCard(props){
                     <h3 className='mb-3'>Cards:</h3>
                     <div style={{display: 'flex', flexWrap: 'wrap'}}>
                     {product.map( (e,i) => (
-                        <div key={i} style={{width: '23%', marginRight: '20px', padding: '10px', marginBottom: '20px'}} className='card shadow'>
+                        <div key={i} className='shadow contCardProducts'>
                         <img src={e.image_url} alt="" className='card-img-top' style={{width: '100%', height: '50%'}}/>
-                        <div className="card-body">
+                        <div>
                             <h5 className="card-title">{e.name}</h5>
                             <Link to={`/products/${e.id}`} className='btn btn-success'>Detalle</Link>
                         </div>

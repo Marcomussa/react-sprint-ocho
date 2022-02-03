@@ -80,11 +80,11 @@ function CategoryDetail(props){
                     {
                         product.map( (e,i) => {
                             if(e.category_id === Number(id)){
-                                return <div key={i} style={{width: '23%', marginRight: '20px', padding: '10px'}} className='card shadow'>
-                                    <img src={e.image_url} alt="" className='card-img-top'/>
-                                    <div className="card-body">
-                                        <h5 className="card-title">{e.name}</h5>
-                                        <p className="card-text">${e.price}</p>
+                                return <div key={i} className='shadow contCategoryDetail'>
+                                    <img src={e.image_url} alt=""/>
+                                    <div>
+                                        <h5>{e.name}</h5>
+                                        <p>${e.price}</p>
                                         <Link to={`/products/${e.id}`} className='btn btn-success'>Detalle</Link>
                                     </div>
                                 </div>
