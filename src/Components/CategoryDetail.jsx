@@ -64,7 +64,7 @@ function CategoryDetail(props){
                     </div>
                 </div>
                 <hr />
-                <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'}}>
+                <div style={{display: 'flex', flexWrap: 'wrap'}}>
                     {
                         cantProdsXCat.map(e => {
                             if(e.id === Number(id)){
@@ -84,7 +84,7 @@ function CategoryDetail(props){
                                     <img src={e.image_url} alt="" className='card-img-top'/>
                                     <div className="card-body">
                                         <h5 className="card-title">{e.name}</h5>
-                                        <p className="card-text">{e.description}</p>
+                                        <p className="card-text">${e.price}</p>
                                         <Link to={`/products/${e.id}`} className='btn btn-success'>Detalle</Link>
                                     </div>
                                 </div>

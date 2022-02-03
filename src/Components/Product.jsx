@@ -95,16 +95,13 @@ function Products(props){
                             <div className="col-md-2" style={subStyles}>
                                 <h4>ID</h4>
                             </div>
-                            <div className='col-md-2' style={subStyles}>
+                            <div className='col-md-3' style={subStyles}>
                                 <h4>Nombre</h4>
-                            </div>
-                            <div className="col-md-2" style={subStyles}>
-                                <h4>Descripcion</h4>
                             </div>
                             <div className="col-md-2" style={subStyles}>
                                 <h4>Precio</h4> <span>(final)</span>
                             </div>
-                            <div className="col-md-2" style={subStyles}>
+                            <div className="col-md-3" style={subStyles}>
                                 <h4>Categoria</h4>
                             </div>
                             <div className="col-md-2" style={subStyles}>
@@ -120,16 +117,14 @@ function Products(props){
                                             <div className="col-md-2" style={subStyles}>
                                                 <p>{item.id}</p>
                                             </div>
-                                            <div className="col-md-2" style={subStyles}>
+                                            <div className="col-md-3" style={subStyles}>
                                                 <p>{item.name}</p>
                                             </div>
-                                            <div className="col-md-2" style={subStyles}>
-                                                <p>{item.description}</p>
-                                            </div>
+                                            
                                             <div className="col-md-2" style={subStyles}>
                                                 <p>${item.price - (item.price * 0.01 * item.discount)}</p>
                                             </div>
-                                            <div className="col-md-2" style={subStyles}>
+                                            <div className="col-md-3" style={subStyles}>
                                             <p>{
                                                 category ? 
                                                 category.map((category, i) => {

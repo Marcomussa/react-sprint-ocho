@@ -52,7 +52,7 @@ function ProductCard(props){
                     </div>
                     <hr />
                     <h3 className='mb-3'>Cards:</h3>
-                    <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'}}>
+                    <div style={{display: 'flex', flexWrap: 'wrap'}}>
                     {product.map( (e,i) => (
                         <div key={i} style={{width: '23%', marginRight: '20px', padding: '10px', marginBottom: '20px'}} className='card shadow'>
                         <img src={e.image_url} alt="" className='card-img-top' style={{width: '100%', height: '50%'}}/>
